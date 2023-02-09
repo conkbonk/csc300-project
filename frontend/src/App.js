@@ -11,6 +11,10 @@ import Signup from "./components/pages/registerPage";
 import PrivateUserProfile from "./components/pages/privateUserProfilePage";
 import { createContext, useState, useEffect } from "react";
 import getUserInfo from "./utilities/decodeJwt";
+import MbtaAlertsPage from "./components/pages/mbtaAlerts";
+import RedStops from "./components/pages/redStops";
+import OrangeStops from "./components/pages/orangeStops";
+import BlueStops from "./components/pages/blueStops";
 
 export const UserContext = createContext();
 //test change
@@ -27,10 +31,14 @@ const App = () => {
       <Navbar />
       <UserContext.Provider value={user}>
         <Routes>
+          <Route exact path="/mbtaAlerts" element={<MbtaAlertsPage />} />
           <Route exact path="/" element={<LandingPage />} />
           <Route exact path="/home" element={<HomePage />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/redStops" element={<RedStops />} />
+          <Route exact path="/orangeStops" element={<OrangeStops />} />
+          <Route exact path="/blueStops" element={<BlueStops />} />
           <Route path="/privateUserProfile" element={<PrivateUserProfile />} />
         </Routes>
       </UserContext.Provider>
