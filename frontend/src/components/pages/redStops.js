@@ -21,7 +21,7 @@ function RedStops() {
   return (
     
     <div>
-      <h1> Red Line Stops</h1>
+      <h1> Red Line Stops ._. </h1>
       {stops.map(stop => (
         <Card
         body
