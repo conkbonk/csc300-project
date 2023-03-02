@@ -23,7 +23,8 @@ const newUserSchema = new mongoose.Schema(
       default: Date.now,
     },
   },
-  { collection: "users" }
+  { collection: "users" } 
+  //hey
 );
 
 module.exports = mongoose.model('users', newUserSchema)
