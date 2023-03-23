@@ -20,7 +20,7 @@ const newUserSchema = new mongoose.Schema(
     },
     favline: {
       type: String,
-      required: true,
+  
       label: "favline",
     },
     date: {
