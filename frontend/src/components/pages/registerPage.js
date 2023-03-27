@@ -69,6 +69,7 @@ const Register = () => {
           >
             <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
               <Form>
+              <img src="http://localhost:8100/user-icon.png" alt="Image description" />
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label style={labelStyling}>Username</Form.Label>
                   <Form.Control
