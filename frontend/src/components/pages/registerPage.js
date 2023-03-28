@@ -58,7 +58,8 @@ const Register = () => {
       }
     }
   };
-
+//change font?
+ 
   return (
     <>
       <section className="vh-100">
