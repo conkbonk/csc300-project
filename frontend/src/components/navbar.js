@@ -16,6 +16,7 @@ export default function Navbar() {
   setUser(getUserInfo())
   }, [])
   
+  
   // if (!user) return null   - for now, let's show the bar even not logged in.
   // we have an issue with getUserInfo() returning null after a few minutes
   // it seems.
@@ -30,6 +31,8 @@ export default function Navbar() {
         <Nav.Link href="/redStops">MBTA Red Line Stops</Nav.Link>
         <Nav.Link href="/orangeStops">MBTA Orange Line Stops</Nav.Link>
         <Nav.Link href="/blueStops">MBTA Blue Line Stops</Nav.Link>
+        <Nav.Link href="/commuterRoute"> MBTA Commuter Route </Nav.Link>
+        <Nav.Link href="/ferryRoute"> MBTA Ferry Route</Nav.Link>
       </Nav>
     </Container>
   </ReactNavbar>
