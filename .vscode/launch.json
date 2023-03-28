@@ -8,9 +8,9 @@
         {
             "cwd": "${workspaceFolder}/backend/server",
             "command": "npm start",
-            "name": "backend   server: npm start",
+            "name": "backend server: npm start",
             "request": "launch",
-            "type": "node-terminal"
+            "type": "node-terminal"  
         },
     
     ]
