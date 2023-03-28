@@ -28,7 +28,7 @@ function FerryStops() {
           style={{ width: "30rem" }}
         >
           <Card.Body>
-            <Card.Title>Stop name:  {stop.attributes.name}</Card.Title>
+            <Card.Title>Stop name: {stop.attributes.name}</Card.Title>
             <Card.Text>Address: {stop.attributes.address}</Card.Text>
           </Card.Body>
         </Card>
