@@ -8,9 +8,9 @@ function FerryStops() {
   useEffect(() => {
     async function fetchData() {
       const result = await axios(
-        "https://api-v3.mbta.com/schedules?page%5Blimit%5D=50&include=stop&filter%5Broute%5D=Boat-F1%2C%20Boat-F2%2C%20Boat-F3%2C%20Boat-F4"
+        "https://api-v3.mbta.com/stops?filter%5Broute_type%5D=4"
       );
-      setAlerts(result.data.included);
+      setAlerts(result.data.data);
     }
     fetchData();
   }, []);
