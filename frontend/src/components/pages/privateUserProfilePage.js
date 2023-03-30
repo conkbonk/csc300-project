@@ -14,6 +14,7 @@ const PrivateUserProfile = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const navigate = useNavigate();
+  const { id, email, username, password, favline} = user
 
 
   // handle logout button
@@ -34,6 +35,9 @@ const PrivateUserProfile = () => {
     <div class="container">
       <div class="col-md-12 text-center">
         <h1>{user && user.username}</h1>
+        <h3>
+          Your favorite line is the <span className='favline'> {favline} </span> line.
+          </h3>
         <div class="col-md-12 text-center">
           <>
             <Button className="me-2" onClick={handleShow}>
