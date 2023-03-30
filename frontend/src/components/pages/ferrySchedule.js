@@ -8,9 +8,9 @@ function FerryStops() {
   useEffect(() => {
     async function fetchData() {
       const result = await axios(
-        'https://api-v3.mbta.com/stops?include=route&filter%5Broute%5D=Orange'
+        "https://api-v3.mbta.com/schedules?page%5Blimit%5D=50&include=stop&filter%5Broute%5D=Boat-F1%2C%20Boat-F2%2C%20Boat-F3%2C%20Boat-F4"
       );
-      setAlerts(result.data.data);
+      setAlerts(result.data.included);
     }
     fetchData();
   }, []);
@@ -29,7 +29,8 @@ function FerryStops() {
         >
           <Card.Body>
             <Card.Title>Stop name: {stop.attributes.name}</Card.Title>
-            <Card.Text>Address: {stop.attributes.address}</Card.Text>
+            <Card.Title>Address: {stop.attributes.address}</Card.Title>
+            <Card.Title>Ferry: {stop.attributes.platform_name}</Card.Title>
           </Card.Body>
         </Card>
       ))}
