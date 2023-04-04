@@ -31,6 +31,8 @@ export default function Navbar() {
         <Nav.Link href="/redStops">MBTA Red Line Stops</Nav.Link>
         <Nav.Link href="/orangeStops">MBTA Orange Line Stops</Nav.Link>
         <Nav.Link href="/blueStops">MBTA Blue Line Stops</Nav.Link>
+        <Nav.Link href="/ferrySchedule">MBTA Ferry Schedule</Nav.Link>
+
 </Nav>
     </Container>
   </ReactNavbar>
