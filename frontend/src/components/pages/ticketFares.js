@@ -129,7 +129,7 @@ Stops:
 <ul>
 {ticketFares.ferry.stops.map(stop => (
 <li key={stop.name}>
-{stop.name}: ${stop.price}
+{stop.name}: ${stop.cost}
 </li>
 ))}
 </ul>
