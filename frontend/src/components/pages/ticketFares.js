@@ -1,38 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const TicketFare = () => {
-  const fares = [
-    {
-      type: 'Commuter rail',
-      price: 200,
-      available: true
-    },
-    {
-      type: 'Ferry',
-      price: 500,
-      available: true
-    },
-    {
-      type: 'Subway',
-      price: 1000,
-      available: false
-    }
-  ];
+const fares = {
+  bus: 2.75,
+  commuterRail: 6.25,
+  subway: 2.75,
+  ferry: 2.75
+};
+
+const FareCalculator = () => {
+  const [mode, setMode] = useState('bus');
+
+  const handleModeChange = (event) => {
+    setMode(event.target.value);
+  };
 
   return (
     <div>
-      <h2>Ticket Fares</h2>
-      <ul>
-        {fares.map(fare => (
-          <li key={fare.type}>
-            <span>{fare.type}: </span>
-            <span>{fare.price}$</span>
-            {fare.available ? <span> Available</span> : <span> Sold Out</span>}
-          </li>
-        ))}
-      </ul>
+      <h2>Fare Calculator</h2>
+      <form>
+        <label>
+          Mode of transportation:
+          <select value={mode} onChange={handleModeChange}>
+            <option value="bus">Bus</option>
+            <option value="commuterRail">Commuter Rail</option>
+            <option value="subway">Subway</option>
+            <option value="ferry">Ferry</option>
+          </select>
+        </label>
+      </form>
+      <p>Fare: ${fares[mode]}</p>
     </div>
   );
 };
 
-export default TicketFare;
+export default FareCalculator;
