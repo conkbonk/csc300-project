@@ -16,6 +16,7 @@ import RedStops from "./components/pages/redStops";
 import OrangeStops from "./components/pages/orangeStops";
 import BlueStops from "./components/pages/blueStops";
 import FerrySchedule from "./components/pages/ferrySchedule";
+import TicketFares from "./components/pages/ticketFares";
 
 export const UserContext = createContext();
 //test change
@@ -41,6 +42,7 @@ const App = () => {
           <Route exact path="/orangeStops" element={<OrangeStops />} />
           <Route exact path="/blueStops" element={<BlueStops />} />
           <Route exact path="/ferrySchedule" element={<FerrySchedule />} />
+          <Route exact path="/ticketFares" element={<TicketFares/>}/>
           <Route path="/privateUserProfile" element={<PrivateUserProfile />} />
         </Routes>
       </UserContext.Provider>
