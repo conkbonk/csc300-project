@@ -76,7 +76,7 @@ const TicketFares = () => {
 return (
 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gridGap: '20px' }}>
 <div>
-<h2>Bus</h2>
+<h2>Red Line</h2>
 <div>One Way: ${ticketFares.bus.oneWay}</div>
 <div>Round Trip: ${ticketFares.bus.roundTrip}</div>
 <div>
@@ -91,7 +91,7 @@ Stops:
 </div>
 </div>
 <div>
-<h2>Subway</h2>
+<h2>Orange Line</h2>
 <div>One Way: ${ticketFares.subway.oneWay}</div>
 <div>Round Trip: ${ticketFares.subway.roundTrip}</div>
 <div>
@@ -106,7 +106,7 @@ Stops:
 </div>
 </div>
 <div>
-<h2>Commuter Rail</h2>
+<h2>Blue Line</h2>
 <div>One Way: ${ticketFares.commuterRail.oneWay}</div>
 <div>Round Trip: ${ticketFares.commuterRail.roundTrip}</div>
 <div>
