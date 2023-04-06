@@ -21,7 +21,7 @@ export default function Navbar() {
   // we have an issue with getUserInfo() returning null after a few minutes
   // it seems.
   return (
-    <ReactNavbar bg="dark" variant="dark">
+    <ReactNavbar bg="light" variant="light">
     <Container>
       <Nav className="me-auto">
         <Nav.Link href="/">Start</Nav.Link>
@@ -33,6 +33,13 @@ export default function Navbar() {
         <Nav.Link href="/blueStops">MBTA Blue Line Stops</Nav.Link>
         <Nav.Link href="/ferrySchedule">MBTA Ferry Schedule</Nav.Link>
         <Nav.Link href="/ticketFares">MBTA Ticket Fares</Nav.Link>
+        <Nav.Link href="/contact">Contact Us</Nav.Link>
+
+
+        <style jsx>{`
+        /* Add your custom styles here */
+      `}</style>
+
 </Nav>
     </Container>
   </ReactNavbar>
