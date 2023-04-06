@@ -1,4 +1,5 @@
 import React from 'react';
+console.log("Hello, World!");
 
 const Contact = () => {
   return (
@@ -27,4 +28,4 @@ const Contact = () => {
   );
 }
 
-export default Contact;
+export default contact;
