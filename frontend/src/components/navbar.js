@@ -33,6 +33,13 @@ export default function Navbar() {
         <Nav.Link href="/blueStops">MBTA Blue Line Stops</Nav.Link>
         <Nav.Link href="/ferrySchedule">MBTA Ferry Schedule</Nav.Link>
         <Nav.Link href="/ticketFares">MBTA Ticket Fares</Nav.Link>
+        <Nav.Link href="/contact">Contact Us</Nav.Link>
+
+
+        <style jsx>{`
+        /* Add your custom styles here */
+      `}</style>
+
 </Nav>
     </Container>
   </ReactNavbar>
