@@ -28,13 +28,13 @@ function OrangeStops() {
         outline
         color="success"
         className="mx-1 my-2"
-        style={{ width: "30rem" }}
-      >
-        <Card.Body>
-        <Card.Title>Stop name: {stop.attributes.name}</Card.Title>
-        <Card.Text>Address: {stop.attributes.address}</Card.Text>
-        </Card.Body>
-      </Card>
+        style={{ width: "30rem", backgroundColor: "orange" }}
+        >
+          <Card.Body>
+            <Card.Title>Stop name: {stop.attributes.name}</Card.Title>
+            <Card.Text>Address: {stop.attributes.address}</Card.Text>
+          </Card.Body>
+        </Card>
       ))}
     </div>
   );
