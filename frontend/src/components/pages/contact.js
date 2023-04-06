@@ -8,23 +8,30 @@ const Contact = () => {
       <p>Please fill out the form below to get in touch with us.</p>
       <form>
         <label>
-          Name:
+          Name :
           <input type="text" name="name" />
         </label>
         <br />
         <br />
         <label>
-          Email:
+          Email :
           <input type="email" name="email" />
         </label>
         <br />
         <br />
         <label>
-          Message:
+          Station Name : 
+          <textarea name="Station Name" />
+        </label>
+        <br />
+        <br />
+        <label>
+          Message : 
           <textarea name="message" />
         </label>
         <br />
         <br />
+        
         <button type="submit">Submit</button>
       </form>
     </div>
