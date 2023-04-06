@@ -18,8 +18,6 @@ import BlueStops from "./components/pages/blueStops";
 import FerrySchedule from "./components/pages/ferrySchedule";
 import TicketFares from "./components/pages/ticketFares";
 import Contact from "./components/pages/contact";
-
-
 export const UserContext = createContext();
 //test change
 //test again

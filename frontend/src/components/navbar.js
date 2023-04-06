@@ -36,9 +36,30 @@ export default function Navbar() {
         <Nav.Link href="/contact">Contact Us</Nav.Link>
 
 
-        <style jsx>{`
-        /* Add your custom styles here */
-      `}</style>
+       <style jsx>{`
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #f0f0f0;
+  }
+
+  .button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #008000;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background-color: #006400;
+  }
+`}</style>
+
 
 </Nav>
     </Container>
