@@ -12,15 +12,18 @@ const Contact = () => {
           <input type="text" name="name" />
         </label>
         <br />
+        <br />
         <label>
           Email:
           <input type="email" name="email" />
         </label>
         <br />
+        <br />
         <label>
           Message:
           <textarea name="message" />
         </label>
+        <br />
         <br />
         <button type="submit">Submit</button>
       </form>
