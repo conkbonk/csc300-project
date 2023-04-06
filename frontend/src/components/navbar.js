@@ -2,68 +2,42 @@ import React, { useEffect, useState } from "react";
 import getUserInfo from '../utilities/decodeJwt';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import ReactNavbar from 'react-bootstrap/Navbar';
 
-
-// Here, we display our Navbar
 export default function Navbar() {
-  // We are pulling in the user's info but not using it for now.
-  // Warning disabled: 
-  // eslint-disable-next-line
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState({});
 
   useEffect(() => {
-  setUser(getUserInfo())
-  }, [])
-  
-  
-  // if (!user) return null   - for now, let's show the bar even not logged in.
-  // we have an issue with getUserInfo() returning null after a few minutes
-  // it seems.
+    setUser(getUserInfo());
+  }, []);
+
   return (
-    <ReactNavbar bg="light" variant="light">
-    <Container>
-      <Nav className="me-auto">
-        <Nav.Link href="/">Start</Nav.Link>
-        <Nav.Link href="/home">Home</Nav.Link>
-        <Nav.Link href="/privateUserProfile">Profile</Nav.Link>
-        <Nav.Link href="/mbtaAlerts">MBTA Alerts</Nav.Link>
-        <Nav.Link href="/redStops">MBTA Red Line Stops</Nav.Link>
-        <Nav.Link href="/orangeStops">MBTA Orange Line Stops</Nav.Link>
-        <Nav.Link href="/blueStops">MBTA Blue Line Stops</Nav.Link>
-        <Nav.Link href="/ferrySchedule">MBTA Ferry Schedule</Nav.Link>
-        <Nav.Link href="/ticketFares">MBTA Ticket Fares</Nav.Link>
-        <Nav.Link href="/contact">Contact Us</Nav.Link>
-
-
-       <style jsx>{`
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    background-color: #f0f0f0;
-  }
-
-  .button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #008000;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-  }
-
-  .button:hover {
-    background-color: #006400;
-  }
-`}</style>
-
-
-</Nav>
-    </Container>
-  </ReactNavbar>
-
+    <ReactNavbar bg="light" expand="lg">
+      <Container>
+        <ReactNavbar.Toggle aria-controls="basic-navbar-nav" />
+        <ReactNavbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/home" style={{backgroundColor: "red", color: "white"}}>Home</Nav.Link>
+            <Nav.Link href="/privateUserProfile" style={{backgroundColor: "green", color: "white"}}>Profile</Nav.Link>
+            <Nav.Link href="/mbtaAlerts" style={{backgroundColor: "blue", color: "white"}}>MBTA Alerts</Nav.Link>
+            <NavDropdown title="MBTA Stops" id="basic-nav-dropdown" style={{ backgroundColor: "blue", color: "white" }}>
+              <NavDropdown.Item href="/redStops" style={{backgroundColor: "red", color: "white"}}>Red Line Stops</NavDropdown.Item>
+              <NavDropdown.Item href="/orangeStops" style={{backgroundColor: "orange", color: "white"}}>Orange Line Stops</NavDropdown.Item>
+              <NavDropdown.Item href="/blueStops" style={{backgroundColor: "blue", color: "white"}}>Blue Line Stops</NavDropdown.Item>
+              <NavDropdown.Item href="/ferrySchedule" style={{backgroundColor: "green", color: "white"}}>Ferry Stops</NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link href="/ticketFares" style={{backgroundColor: "purple", color: "white"}}>MBTA Ticket Fares</Nav.Link>
+            <Nav.Link href="/contact" style={{backgroundColor: "gray", color: "white"}}>Contact Us</Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link href="/signup">Sign Up</Nav.Link>
+          </Nav>
+        </ReactNavbar.Collapse>
+      </Container>
+    </ReactNavbar>
   );
 }
+
+
