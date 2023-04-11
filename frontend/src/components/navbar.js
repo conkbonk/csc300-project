@@ -34,7 +34,7 @@ export default function Navbar() {
             <NavDropdown.Item href="/login" style={{backgroundColor: "green", color: "yellow"}}>Login</NavDropdown.Item>
             <NavDropdown.Item href="/signup" style={{backgroundColor: "blue", color: "red"}}>Sign Up</NavDropdown.Item>
           </NavDropdown>
-
+          <Nav.Link href="/addComment">Make Comment</Nav.Link>
         </ReactNavbar.Collapse>
       </Container>
     </ReactNavbar>

@@ -18,6 +18,7 @@ import BlueStops from "./components/pages/blueStops";
 import FerrySchedule from "./components/pages/ferrySchedule";
 import TicketFares from "./components/pages/ticketFares";
 import Contact from "./components/pages/contact";
+import AddCommmentPage from "./components/pages/addComment";
 export const UserContext = createContext();
 //test change
 //test again
@@ -45,6 +46,7 @@ const App = () => {
           <Route exact path="/ticketFares" element={<TicketFares/>}/>
           <Route exact path="/contact" element={<Contact/>}/>
           <Route path="/privateUserProfile" element={<PrivateUserProfile />} />
+          <Route path="/addComment" element={<AddCommmentPage />} />
         </Routes>
       </UserContext.Provider>
     </>
