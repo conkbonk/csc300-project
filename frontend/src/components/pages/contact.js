@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Button, Container, Form} from 'react-bootstrap';
 
 const MessageForm = () => {
   const [name, setName] = useState('');
@@ -36,33 +37,44 @@ const MessageForm = () => {
   };
 
   return (
-    <div>
-    <h1>Contact Us</h1>
-    <p>Please fill out the form below to get in touch with us.</p>
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name:</label>
-      <input type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
-      <br />
-      <br />
-
-      <label htmlFor="email">Email:</label>
-      <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <br />
+    <Container>
+      <h1>Contact Us</h1>
+      <p>Please fill out the form below to get in touch with us.</p>
+      <form onSubmit={handleSubmit}>
+        <Form.Group>
+          <Form.Label> Name </Form.Label>
+          <Form.Control
+            className = 'w-25' type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
+        </Form.Group>
       <br />
 
-      <label htmlFor="stationName">Station Name:</label>
-      <input type="text" id="stationName" name="stationName" value={stationName} onChange={(e) => setStationName(e.target.value)} />
-      <br />
-      <br />
-
-      <label htmlFor="message">Message:</label>
-      <textarea id="message" name="message" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+      <Form.Group>
+          <Form.Label> Email </Form.Label>
+          <Form.Control
+            className = 'w-25' type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        </Form.Group>
       <br />
 
+      <Form.Group>
+          <Form.Label> Station Name </Form.Label>
+          <Form.Control
+           className = 'w-25' type="text" id="stationName" name="stationName" value={stationName} onChange={(e) => setStationName(e.target.value)} />
+        </Form.Group>
+      <br />
 
-      <button type="submit">Submit</button>
+      <Form.Group>
+          <Form.Label> Message </Form.Label>
+          <Form.Control 
+            className = 'w-50' style={{height:200}} id="message" name="message" value={message} onChange={(e) => setMessage(e.target.value)} />
+        </Form.Group>
+      <br />
+
+
+      <Button variant='primary' type ='submit'>
+        Submit
+      </Button>
     </form>
-    </div>
+    </Container>
   );
 }
 
