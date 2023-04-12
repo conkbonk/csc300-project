@@ -29,6 +29,7 @@ export default function Navbar() {
             </NavDropdown>
             <Nav.Link href="/ticketFares" style={{backgroundColor: "purple", color: "white"}}>MBTA Ticket Fares</Nav.Link>
             <Nav.Link href="/contact" style={{backgroundColor: "gray", color: "white"}}>Contact Us</Nav.Link>
+            <Nav.Link href="/ticketPurchase"style={{backgroundColor: "red", color: "white"}}>Purchase Ticket</Nav.Link>
           </Nav>
           <NavDropdown title="Account options" id="basic-nav-dropdown" style={{backgroundColor: "Grey", color: "White"}}>
             <NavDropdown.Item href="/login" style={{backgroundColor: "green", color: "yellow"}}>Login</NavDropdown.Item>

@@ -1,15 +1,11 @@
-import React from "react";
-// We use Route in order to define the different routes of our application
+import React, { createContext, useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-
-// We import all the components we need in our app
 import Navbar from "./components/navbar";
 import LandingPage from "./components/pages/landingPage";
 import HomePage from "./components/pages/homePage";
 import Login from "./components/pages/loginPage";
 import Signup from "./components/pages/registerPage";
 import PrivateUserProfile from "./components/pages/privateUserProfilePage";
-import { createContext, useState, useEffect } from "react";
 import getUserInfo from "./utilities/decodeJwt";
 import MbtaAlertsPage from "./components/pages/mbtaAlerts";
 import RedStops from "./components/pages/redStops";
@@ -19,9 +15,10 @@ import FerrySchedule from "./components/pages/ferrySchedule";
 import TicketFares from "./components/pages/ticketFares";
 import Contact from "./components/pages/contact";
 import AddCommmentPage from "./components/pages/addComment";
+import TicketPurchase from "./components/pages/ticketPurchase";
+
 export const UserContext = createContext();
-//test change
-//test again
+
 const App = () => {
   const [user, setUser] = useState();
 
@@ -47,12 +44,11 @@ const App = () => {
           <Route exact path="/contact" element={<Contact/>}/>
           <Route path="/privateUserProfile" element={<PrivateUserProfile />} />
           <Route path="/addComment" element={<AddCommmentPage />} />
+          <Route path="/ticketPurchase" element={<TicketPurchase />} />
         </Routes>
       </UserContext.Provider>
     </>
   );
 };
 
-
-
-export default App
+export default App;
