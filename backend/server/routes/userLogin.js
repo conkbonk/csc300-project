@@ -5,9 +5,16 @@ const { userLoginValidation } = require('../models/userValidator')
 const newUserModel = require('../models/userModel')
 const bcrypt = require('bcrypt')
 const { generateAccessToken } = require('../utilities/generateToken')
+const rateLimit = require("express-rate-limit");
 
+// Set up rate limiter options
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 5 // limit each IP to 5 requests per windowMs
+});
 
-router.post('/login', async (req, res) => {
+// Apply rate limiter middleware to login endpoint
+router.post('/login', limiter, async (req, res) => {
 
   const { error } = userLoginValidation(req.body);
   if (error) return res.status(400).send({ message: error.errors[0].message });
