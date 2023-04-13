@@ -16,6 +16,8 @@ import TicketFares from "./components/pages/ticketFares";
 import Contact from "./components/pages/contact";
 import AddCommmentPage from "./components/pages/addComment";
 import TicketPurchase from "./components/pages/ticketPurchase";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 export const UserContext = createContext();
 
@@ -41,7 +43,6 @@ const App = () => {
           <Route exact path="/blueStops" element={<BlueStops />} />
           <Route exact path="/ferrySchedule" element={<FerrySchedule />} />
           <Route exact path="/ticketFares" element={<TicketFares/>}/>
-          <Route exact path="/contact" element={<Contact/>}/>
           <Route path="/privateUserProfile" element={<PrivateUserProfile />} />
           <Route path="/addComment" element={<AddCommmentPage />} />
           <Route path="/ticketPurchase" element={<TicketPurchase />} />
