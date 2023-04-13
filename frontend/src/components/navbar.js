@@ -27,10 +27,16 @@ export default function Navbar() {
               <NavDropdown.Item href="/blueStops" style={{backgroundColor: "blue", color: "white"}}>Blue Line Stops</NavDropdown.Item>
               <NavDropdown.Item href="/ferrySchedule" style={{backgroundColor: "green", color: "white"}}>Ferry Stops</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="/ticketFares" style={{backgroundColor: "purple", color: "white"}}>MBTA Ticket Fares</Nav.Link>
-            <Nav.Link href="/ticketPurchase"style={{backgroundColor: "red", color: "white"}}>Purchase Ticket</Nav.Link>
+            <NavDropdown title="Ticket Options" id="basic-nav-dropdown" style={{backgroundColor: "grey", color: "white"}}>
+              <NavDropdown.Item href="/ticketFares" style={{backgroundColor: "purple", color: "white"}}>
+                MBTA Ticket Fares
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/ticketPurchase" style={{backgroundColor: "red", color: "white"}}>
+                Purchase Ticket
+              </NavDropdown.Item>
+            </NavDropdown>
           </Nav>
-          <NavDropdown title="Account options" id="basic-nav-dropdown" style={{backgroundColor: "Grey", color: "White"}}>
+          <NavDropdown title="Account options" id="basic-nav-dropdown" style={{backgroundColor: "grey", color: "white"}}>
             <NavDropdown.Item href="/login" style={{backgroundColor: "green", color: "yellow"}}>Login</NavDropdown.Item>
             <NavDropdown.Item href="/signup" style={{backgroundColor: "blue", color: "red"}}>Sign Up</NavDropdown.Item>
           </NavDropdown>
@@ -40,6 +46,3 @@ export default function Navbar() {
     </ReactNavbar>
   );
 }
-
-
-
