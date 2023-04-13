@@ -31,9 +31,28 @@ function UserHistory() {
   }, [userHistory]);
 
   const handleClick = (event) => {
-    const action = `Clicked on ${event.target.tagName}`;
-    addToUserHistory(action);
+    let action, details;
+    const tagName = event.target.tagName;
+    const href = event.target.getAttribute('href');
+  
+    switch (tagName) {
+      case 'A':
+        action = `Clicked on a link: ${href}`;
+        break;
+      case 'BUTTON':
+        action = `Clicked on a button: ${event.target.textContent}`;
+        break;
+      case 'INPUT':
+        action = `Typed into an input: ${event.target.value}`;
+        details = `Input name: ${event.target.name}`;
+        break;
+      default:
+        action = `Clicked on ${tagName}`;
+    }
+  
+    addToUserHistory(action, details);
   };
+  
 
   const handleKeyDown = (event) => {
     const action = `Pressed ${event.key}`;
