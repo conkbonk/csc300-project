@@ -16,6 +16,7 @@ import TicketFares from "./components/pages/ticketFares";
 import Contact from "./components/pages/contact";
 import AddCommmentPage from "./components/pages/addComment";
 import TicketPurchase from "./components/pages/ticketPurchase";
+import UserHistory from "./components/pages/userHistory";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -46,6 +47,7 @@ const App = () => {
           <Route path="/privateUserProfile" element={<PrivateUserProfile />} />
           <Route path="/addComment" element={<AddCommmentPage />} />
           <Route path="/ticketPurchase" element={<TicketPurchase />} />
+          <Route path="/userHistory" element={<UserHistory />} />
         </Routes>
       </UserContext.Provider>
     </>

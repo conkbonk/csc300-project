@@ -27,6 +27,8 @@ export default function Navbar() {
               <NavDropdown.Item href="/blueStops" style={{backgroundColor: "blue", color: "white"}}>Blue Line Stops</NavDropdown.Item>
               <NavDropdown.Item href="/ferrySchedule" style={{backgroundColor: "green", color: "white"}}>Ferry Stops</NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link href="/userHistory">History</Nav.Link>
+
             <NavDropdown title="Ticket Options" id="basic-nav-dropdown" style={{backgroundColor: "grey", color: "white"}}>
               <NavDropdown.Item href="/ticketFares" style={{backgroundColor: "purple", color: "white"}}>
                 MBTA Ticket Fares
