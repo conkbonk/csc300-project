@@ -1,64 +1,70 @@
 import React, { useState } from 'react';
+import {Button, Container, Form} from 'react-bootstrap';
 
 function CommentForm() {
-  const [formData, setFormData] = useState({
-    username: '',
-    stationName: '',
-    comment: '',
-  });
+  const [username, setUsername] = useState('');
+  const [stationName, setStationName] = useState('');
+  const [comment, setComment] = useState('');
 
-  const handleSubmit = (event) => {
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    fetch('http://localhost:8081/comment/add', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.log(error));
+    try {
+      const response = await fetch('http://localhost:8096/addComment/post', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, stationName, comment }),
+      });
+      if (response.ok) {
+        // Comment added successfully
+        alert('Message sent successfully!');
+        // Clear form fields
+        setUsername('');
+        setStationName('');
+        setComment('');
+      } else {
+        // Handle error response
+        alert('Failed to send message. Please try again later.');
+      }
+    } catch (error) {
+      // Handle fetch error
+      alert('Failed to connect to server. Please try again later.');
+    }
   };
 
-  const handleChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  return (
+ return (
+  <Container>
+    <h1>Add Comment</h1>
     <form onSubmit={handleSubmit}>
-      <label>
-        Username:
-        <input
-          type="text"
-          name="username"
-          value={formData.username}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
-      <label>
-        Station Name:
-        <input
-          type="text"
-          name="stationName"
-          value={formData.stationName}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
-      <label>
-        Comment:
-        <textarea
-          name="comment"
-          value={formData.comment}
-          onChange={handleChange}
-        ></textarea>
-      </label>
-      <br />
-      <input type="submit" value="Submit" />
-    </form>
+      <Form.Group>
+        <Form.Label> Username: </Form.Label>
+        <Form.Control
+          className = 'w-25' type="text" id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+      </Form.Group>
+    <br />
+
+    <Form.Group>
+        <Form.Label> Station Name </Form.Label>
+        <Form.Control
+         className = 'w-25' type="text" id="stationName" name="stationName" value={stationName} onChange={(e) => setStationName(e.target.value)} />
+      </Form.Group>
+    <br />
+
+    <Form.Group>
+        <Form.Label> Comment: </Form.Label>
+        <Form.Control 
+          className = 'w-50' style={{height:200}} type='text' id="comment" as="textarea" rows="4" name="comment" value={comment} onChange={(e) => setComment(e.target.value)} />
+      </Form.Group>
+    <br />
+
+
+    <Button variant='primary' type ='submit'>
+      Submit
+    </Button>
+  </form>
+  </Container>
   );
 }
 

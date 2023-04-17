@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 //user schema/model
-const ratingSchema = new mongoose.Schema(
+const commentSchema = new mongoose.Schema(
   {
     username: {
       type: String,
@@ -20,7 +20,6 @@ const ratingSchema = new mongoose.Schema(
   }
   },
   { collection: "comments" } 
-  //hey
 );
 
-module.exports = mongoose.model('stationComments', ratingSchema)
+module.exports = mongoose.model('stationComments', commentSchema)

@@ -4,12 +4,11 @@ const contactModel = require('../models/contactModel')
 
 router.post('/add', async (req, res) => {
 
-    const { name, email, stationName, message } = req.body
+    const { name, email, message } = req.body
 
     const sendMessage = new contactModel({
         name: name,
         email: email,
-        stationName: stationName,
         message: message
     });
 

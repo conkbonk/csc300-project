@@ -48,6 +48,7 @@ const App = () => {
           <Route path="/addComment" element={<AddCommmentPage />} />
           <Route path="/ticketPurchase" element={<TicketPurchase />} />
           <Route path="/userHistory" element={<UserHistory />} />
+          <Route path="/contactUs" element={<Contact />} />
         </Routes>
       </UserContext.Provider>
     </>
