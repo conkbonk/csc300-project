@@ -6,7 +6,8 @@ function TicketPurchase() {
   const [expiryMonth, setExpiryMonth] = useState("");
   const [expiryYear, setExpiryYear] = useState("");
   const [cvv, setCvv] = useState("");
-  const [paypalEmail, setPaypalEmail] = useState("");
+  const [paypalEmail, setPaypalEmail] = useState("")
+  const [ticketBuying, setTicketBuying] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
