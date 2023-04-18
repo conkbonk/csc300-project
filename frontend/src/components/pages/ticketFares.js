@@ -73,70 +73,77 @@ stops: [
 },
 };
 const TicketFares = () => {
-return (
-<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gridGap: '20px' }}>
-<div>
-<h2>Red Line</h2>
-<div>One Way: ${ticketFares.bus.oneWay}</div>
-<div>Round Trip: ${ticketFares.bus.roundTrip}</div>
-<div>
-Stops:
-<ul>
-{ticketFares.bus.stops.map(stop => (
-<li key={stop.name}>
-{stop.name}: ${stop.price}
-</li>
-))}
-</ul>
-</div>
-</div>
-<div>
-<h2>Orange Line</h2>
-<div>One Way: ${ticketFares.subway.oneWay}</div>
-<div>Round Trip: ${ticketFares.subway.roundTrip}</div>
-<div>
-Stops:
-<ul>
-{ticketFares.subway.stops.map(stop => (
-<li key={stop.name}>
-{stop.name}: ${stop.price}
-</li>
-))}
-</ul>
-</div>
-</div>
-<div>
-<h2>Blue Line</h2>
-<div>One Way: ${ticketFares.commuterRail.oneWay}</div>
-<div>Round Trip: ${ticketFares.commuterRail.roundTrip}</div>
-<div>
-Stops:
-<ul>
-{ticketFares.commuterRail.stops.map(stop => (
-<li key={stop.name}>
-{stop.name}: ${stop.price}
-</li>
-))}
-</ul>
-</div>
-</div>
-<div>
-<h2>Ferry</h2>
-<div>One Way: ${ticketFares.ferry.oneWay}</div>
-<div>Round Trip: ${ticketFares.ferry.roundTrip}</div>
-<div>
-Stops:
-<ul>
-{ticketFares.ferry.stops.map(stop => (
-<li key={stop.name}>
-{stop.name}: ${stop.cost}
-</li>
-))}
-</ul>
-</div>
-</div>
-</div>
-);
+    return (
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: '1fr 1fr 1fr 1fr', 
+          gridGap: '20px',
+          padding: '20px',
+          borderRadius: '5px',
+          boxShadow: '0 2px 5px rgba(0,0,0,0.2)'
+        }}>
+          <div style={{ backgroundColor: 'red' }}>
+            <h2 style={{ color: 'white' }}>Red Line</h2>
+            <div>One Way: ${ticketFares.bus.oneWay}</div>
+            <div>Round Trip: ${ticketFares.bus.roundTrip}</div>
+            <div>
+              Stops:
+              <ul>
+                {ticketFares.bus.stops.map(stop => (
+                  <li key={stop.name}>
+                    {stop.name}: ${stop.price}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div style={{ backgroundColor: 'orange' }}>
+            <h2 style={{ color: 'white' }}>Orange Line</h2>
+            <div>One Way: ${ticketFares.subway.oneWay}</div>
+            <div>Round Trip: ${ticketFares.subway.roundTrip}</div>
+            <div>
+              Stops:
+              <ul>
+                {ticketFares.subway.stops.map(stop => (
+                  <li key={stop.name}>
+                    {stop.name}: ${stop.price}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div style={{ backgroundColor: 'blue' }}>
+            <h2 style={{ color: 'white' }}>Blue Line</h2>
+            <div>One Way: ${ticketFares.commuterRail.oneWay}</div>
+            <div>Round Trip: ${ticketFares.commuterRail.roundTrip}</div>
+            <div>
+              Stops:
+              <ul>
+                {ticketFares.commuterRail.stops.map(stop => (
+                  <li key={stop.name}>
+                    {stop.name}: ${stop.price}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div style={{ backgroundColor: 'green' }}>
+            <h2 style={{ color: 'white' }}>Ferry</h2>
+            <div>One Way: ${ticketFares.ferry.oneWay}</div>
+            <div>Round Trip: ${ticketFares.ferry.roundTrip}</div>
+            <div>
+              Stops:
+              <ul>
+                {ticketFares.ferry.stops.map(stop => (
+                  <li key={stop.name}>
+                    {stop.name}: ${stop.cost}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      );
 };
 
 export default TicketFares;

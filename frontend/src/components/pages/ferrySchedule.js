@@ -25,12 +25,11 @@ function FerryStops() {
           outline
           bg="success"
           className="mx-1 my-2"
-          style={{ width: "30rem" }}
+          style={{ width: "30rem", backgroundColor: "Dark Green" }}
         >
           <Card.Body>
             <Card.Title>Stop name: {stop.attributes.name}</Card.Title>
-            <Card.Title>Address: {stop.attributes.address}</Card.Title>
-            <Card.Title>Ferry: {stop.attributes.platform_name}</Card.Title>
+            <Card.Text>Address: {stop.attributes.address}</Card.Text>
           </Card.Body>
         </Card>
       ))}

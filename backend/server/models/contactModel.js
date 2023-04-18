@@ -1,21 +1,30 @@
 const mongoose = require("mongoose");
 
-//user schema/model
-const ratingSchema = new mongoose.Schema(
+const messageSchema = new mongoose.Schema(
   {
-    username: {
+    name: {
       type: String,
       required: true,
-      label: "username",
+      label: "name",
     },
-    rating: {
-      type: Number,
-      required: true,
-      label: "Rating",
-    }
+    email: {
+        type: String,
+        required: true,
+        label: "email",
+    },
+    stationName: {
+        type: String,
+        required: true,
+        label: "stationName",
+    },
+    message: {
+        type: String,
+        required: true,
+        label: "message",
+    },
+
   },
   { collection: "contact us" } 
-  //hey
 );
 
-module.exports = mongoose.model('rating', ratingSchema)
+module.exports = mongoose.model('contactUs', messageSchema)

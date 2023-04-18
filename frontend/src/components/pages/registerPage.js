@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 const PRIMARY_COLOR = "#cc5c99";
-const SECONDARY_COLOR = "#0c0c1f";
+const SECONDARY_COLOR = "#dfd4dd";
 const url = "http://localhost:8081/user/signup";
 const Register = () => {
   const [data, setData] = useState({ username: "", email: "", password: "" });
@@ -13,7 +13,7 @@ const Register = () => {
   const navigate = useNavigate();
   const [light, setLight] = useState(false);
   const [bgColor, setBgColor] = useState(SECONDARY_COLOR);
-  const [bgText, setBgText] = useState("Light Mode");
+  const [bgText, setBgText] = useState("Dark Mode");
 
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
@@ -33,6 +33,8 @@ const Register = () => {
     color: PRIMARY_COLOR,
     fontWeight: "bold",
     textDecoration: "none",
+    fontFamily: "Arial, sans-serif" 
+
   };
   let backgroundStyling = { background: bgColor };
   let buttonStyling = {
@@ -70,7 +72,11 @@ const Register = () => {
           >
             <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
               <Form>
-              <img src="http://localhost:8100/user-icon.png" alt="Image description" />
+              <img src=
+              "https://cdn.shopify.com/s/files/1/1816/1199/products/HistoricalMBTAMap-2022MediumPrint-web.jpg?v=1669156160&width=1100" 
+              alt="My Image"
+          width="400"
+         height="300" />
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label style={labelStyling}>Username</Form.Label>
                   <Form.Control
@@ -80,7 +86,7 @@ const Register = () => {
                     placeholder="Enter username"
                   />
                   <Form.Text className="text-muted">
-                    We just might sell your data
+                    A Unique Name
                   </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -91,9 +97,6 @@ const Register = () => {
                     onChange={handleChange}
                     placeholder="Enter Email Please"
                   />
-                  <Form.Text className="text-muted">
-                    We just might sell your data
-                  </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label style={labelStyling}>Password</Form.Label>
@@ -103,6 +106,9 @@ const Register = () => {
                     placeholder="Password"
                     onChange={handleChange}
                   />
+                  <Form.Text className="text-muted">
+                    Don't Forget it!
+                    </Form.Text>
                 </Form.Group>
                 <div class="form-check form-switch">
                   <input
