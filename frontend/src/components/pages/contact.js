@@ -4,7 +4,6 @@ import {Button, Container, Form} from 'react-bootstrap';
 const MessageForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [stationName, setStationName] = useState('');
   const [message, setMessage] = useState('');
 
 
@@ -16,7 +15,7 @@ const MessageForm = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, email, stationName, message }),
+        body: JSON.stringify({ name, email, message }),
       });
       if (response.ok) {
         // Comment added successfully
@@ -24,7 +23,6 @@ const MessageForm = () => {
         // Clear form fields
         setName('');
         setEmail('');
-        setStationName('');
         setMessage('');
       } else {
         // Handle error response
@@ -56,16 +54,9 @@ const MessageForm = () => {
       <br />
 
       <Form.Group>
-          <Form.Label> Station Name </Form.Label>
-          <Form.Control
-           className = 'w-25' type="text" id="stationName" name="stationName" value={stationName} onChange={(e) => setStationName(e.target.value)} />
-        </Form.Group>
-      <br />
-
-      <Form.Group>
           <Form.Label> Message </Form.Label>
           <Form.Control 
-            className = 'w-50' style={{height:200}} id="message" name="message" value={message} onChange={(e) => setMessage(e.target.value)} />
+            className = 'w-50' style={{height:200}} id="message" as="textarea" rows="4" name="message" value={message} onChange={(e) => setMessage(e.target.value)} />
         </Form.Group>
       <br />
 

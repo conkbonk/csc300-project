@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-//user schema/model
 const messageSchema = new mongoose.Schema(
   {
     name: {
@@ -12,11 +11,6 @@ const messageSchema = new mongoose.Schema(
         type: String,
         required: true,
         label: "email",
-    },
-    stationName: {
-        type: String,
-        required: true,
-        label: "stationName",
     },
     message: {
         type: String,

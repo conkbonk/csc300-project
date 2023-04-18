@@ -22,6 +22,7 @@ function RedStops() {
     
     <div>
       <h1> Red Line Stops</h1>
+      <h2> From Braintree to Alewife </h2>
       {stops.map(stop => (
         <Card
           body
