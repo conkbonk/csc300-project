@@ -11,7 +11,7 @@ const commentSchema = new mongoose.Schema(
     stationName: {
       type: String,
       required: true,
-      label: "StationName",
+      label: "stationName",
   },
     comment: {
     type: String,

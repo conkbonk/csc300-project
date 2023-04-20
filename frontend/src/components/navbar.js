@@ -38,11 +38,16 @@ export default function Navbar() {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
+
           <NavDropdown title="Account options" id="basic-nav-dropdown" style={{backgroundColor: "grey", color: "white"}}>
             <NavDropdown.Item href="/login" style={{backgroundColor: "green", color: "yellow"}}>Login</NavDropdown.Item>
             <NavDropdown.Item href="/signup" style={{backgroundColor: "blue", color: "red"}}>Sign Up</NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link href="/addComment">Make Comment</Nav.Link>
+
+          <NavDropdown title="Comments" id="basic-nav-dropdown" style={{marginLeft: 8}}>
+            <NavDropdown.Item href="/addComment"> Make Comment</NavDropdown.Item>
+            <NavDropdown.Item href="/comments">View Comments</NavDropdown.Item>
+          </NavDropdown>
         </ReactNavbar.Collapse>
       </Container>
     </ReactNavbar>

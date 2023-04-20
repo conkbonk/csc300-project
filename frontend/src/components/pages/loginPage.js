@@ -7,7 +7,7 @@ import getUserInfo from "../../utilities/decodeJwt";
 
 const PRIMARY_COLOR = "#cc5c99";
 const SECONDARY_COLOR = '#dfd4dd'
-const url = "http://localhost:8081/user/login";
+const url = "http://localhost:8096/user/login";
 
 const Login = () => {
   const [user, setUser] = useState(null)

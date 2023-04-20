@@ -17,6 +17,7 @@ import Contact from "./components/pages/contact";
 import AddCommmentPage from "./components/pages/addComment";
 import TicketPurchase from "./components/pages/ticketPurchase";
 import UserHistory from "./components/pages/userHistory";
+import CommentPage from "./components/pages/commentPage"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -49,6 +50,7 @@ const App = () => {
           <Route path="/ticketPurchase" element={<TicketPurchase />} />
           <Route path="/userHistory" element={<UserHistory />} />
           <Route path="/contactUs" element={<Contact />} />
+          <Route exact path="/comments" element={<CommentPage />} />
         </Routes>
       </UserContext.Provider>
     </>

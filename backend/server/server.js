@@ -9,9 +9,10 @@ const dbConnection = require('./config/db.config');
 const editUser = require('./routes/userEditUser');
 const deleteUser = require('./routes/userDeleteAll');
 const ratingGetAll = require('./routes/ratingGetAll');
-//const getAllCommentsRoute = require('./routes/getAllComments');
+const getAllCommentsRoute = require('./routes/getAllComments');
 const contactContactMsg = require('./routes/contactContactMsg')
 const commentAddComment = require('./routes/commentCreateComment')
+const commentEditComment = require('./routes/commentEditComment')
 require('dotenv').config();
 const SERVER_PORT = 8096;
 
@@ -25,9 +26,10 @@ app.use('/user', getUserByIdRoute);
 app.use('/user', editUser);
 app.use('/user', deleteUser);
 app.use('/rating', ratingGetAll);
-//app.use('/comment',  getAllCommentsRoute);
-app.use('/contact', contactContactMsg)
-app.use('/addComment', commentAddComment)
+app.use('/comments',  getAllCommentsRoute);
+app.use('/contact', contactContactMsg);
+app.use('/addComment', commentAddComment);
+app.use('/comments', commentEditComment);
 app.listen(SERVER_PORT, (req, res) => {
     console.log(`The backend service is running on port ${SERVER_PORT} and waiting for requests.`);
 });
