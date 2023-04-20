@@ -47,10 +47,11 @@ const CommentList = () => {
   const renderComments = () => {
     return comments.map((comment) => {
       return (
-        <div key={comment._id} onClick={() => handleCommentClick(comment)} className="my-3">
+        <div>
           <h4 className="text-primary">{comment.username}</h4>
           <p>{comment.comment}</p>
           <small className="text-muted">{comment.stationName}</small>
+          <Button style={{color: "blue"}} variant = "text" onClick={() => handleCommentClick(comment)}>Edit</Button>
           <hr />
         </div>
       );
