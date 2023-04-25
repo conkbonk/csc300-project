@@ -1,3 +1,5 @@
+//CANNOT SEE IF LOGGED OUT
+
 import React, { useState, useEffect } from 'react';
 import {Button, Container, Form} from 'react-bootstrap';
 import getUserInfo from '../../utilities/decodeJwt';
@@ -11,7 +13,7 @@ function CommentForm() {
     setUser(getUserInfo())
   }, [])
 
-  const { id, email, username, password, favline} = user;
+  const {username} = user;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
