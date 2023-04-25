@@ -28,14 +28,16 @@ export default function Navbar() {
               <NavDropdown.Item href="/ferrySchedule" style={{backgroundColor: "green", color: "white"}}>Ferry Stops</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="/userHistory">History</Nav.Link>
-
             <NavDropdown title="Ticket Options" id="basic-nav-dropdown" style={{backgroundColor: "grey", color: "white"}}>
               <NavDropdown.Item href="/ticketFares" style={{backgroundColor: "purple", color: "white"}}>
                 MBTA Ticket Fares
               </NavDropdown.Item>
               <NavDropdown.Item href="/ticketPurchase" style={{backgroundColor: "red", color: "white"}}>
                 Purchase Ticket
-              </NavDropdown.Item>
+              </NavDropdown.Item>   
+              <NavDropdown.Item href="/shoppingCart" style={{backgroundColor: "red", color: "white"}}>
+              Shopping Cart
+            </NavDropdown.Item>   
             </NavDropdown>
           </Nav>
 

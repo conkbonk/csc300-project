@@ -18,6 +18,7 @@ import AddCommmentPage from "./components/pages/addComment";
 import TicketPurchase from "./components/pages/ticketPurchase";
 import UserHistory from "./components/pages/userHistory";
 import CommentPage from "./components/pages/commentPage"
+import ShoppingCart from "./components/pages/shoppingCart";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -51,6 +52,7 @@ const App = () => {
           <Route path="/userHistory" element={<UserHistory />} />
           <Route path="/contactUs" element={<Contact />} />
           <Route exact path="/comments" element={<CommentPage />} />
+          <Route path="/shoppingCart" element={<ShoppingCart/>} />
         </Routes>
       </UserContext.Provider>
     </>
