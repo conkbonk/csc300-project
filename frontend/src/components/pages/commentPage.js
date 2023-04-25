@@ -29,12 +29,19 @@ const CommentList = () => {
   };
 
 
-  const handleEditComment = async () => {
+  const handleEditComment = async (req, res) => {
     try {
+      if(editedComment.trim().length !== 0)
+      {
       const response = await axios.post('http://localhost:8096/comments/editComment', {
         _id: selectedComment._id,
         comment: editedComment
       });
+      } 
+      else
+      {
+        window.alert("Comment needs contents!");
+      }
       setSelectedComment(null);
       setEditedComment("");
       fetchComments();
@@ -46,7 +53,7 @@ const CommentList = () => {
 
 
   const handleCommentClick = (comment) => {
-    setSelectedComment(comment);
+    setSelectedComment(comment)
     setEditedComment(comment.comment);
     if(username == comment.username) {
       setShowModal(true);
