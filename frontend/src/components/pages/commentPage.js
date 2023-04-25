@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Button, Modal, Form } from 'react-bootstrap';
 import getUserInfo from '../../utilities/decodeJwt';
 
+//change to allow logged-out user to see
 
 const CommentList = () => {
   const [user, setUser] = useState({})
