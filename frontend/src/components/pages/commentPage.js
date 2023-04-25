@@ -95,7 +95,6 @@ const CommentList = () => {
   return (
     <div className="container mt-5">
       <h2 className="mb-4">Comment List</h2>
-      <h5 classname="mb-4">Click your comment to edit</h5>
       {renderComments()}
       {renderEditModal()}
     </div>
