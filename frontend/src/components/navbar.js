@@ -19,7 +19,7 @@ export default function Navbar() {
         <ReactNavbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/home" style={{backgroundColor: "red", color: "white"}}>Home</Nav.Link>
-            <Nav.Link href="/privateUserProfile" style={{backgroundColor: "green", color: "white"}}>Profile</Nav.Link>
+            <Nav.Link href="/PrivateUserProfile" style={{backgroundColor: "green", color: "white"}}>Profile</Nav.Link>
             <Nav.Link href="/mbtaAlerts" style={{backgroundColor: "blue", color: "white"}}>MBTA Alerts</Nav.Link>
             <NavDropdown title="MBTA Stops" id="basic-nav-dropdown" style={{ backgroundColor: "blue", color: "white" }}>
               <NavDropdown.Item href="/redStops" style={{backgroundColor: "red", color: "white"}}>Red Line Stops</NavDropdown.Item>
