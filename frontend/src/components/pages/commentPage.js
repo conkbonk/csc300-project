@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button, Modal, Form } from 'react-bootstrap';
+import getUserInfo from '../../utilities/decodeJwt';
 
 
 const CommentList = () => {
+  const [user, setUser] = useState({})
   const [comments, setComments] = useState([]);
   const [selectedComment, setSelectedComment] = useState(null);
   const [editedComment, setEditedComment] = useState("");
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);  
 
+  useEffect(() => {
+    setUser(getUserInfo())
+  }, [])
+
+  const {username} = user;
 
   useEffect(() => {
     fetchComments();
@@ -40,12 +47,15 @@ const CommentList = () => {
   const handleCommentClick = (comment) => {
     setSelectedComment(comment);
     setEditedComment(comment.comment);
-    setShowModal(true);
+    if(username == comment.username) {
+      setShowModal(true);
+    }
   };
 
 
   const renderComments = () => {
     return comments.map((comment) => {
+      if(username == comment.username){
       return (
         <div>
           <h4 className="text-primary">{comment.username}</h4>
@@ -55,8 +65,19 @@ const CommentList = () => {
           <hr />
         </div>
       );
-    });
-  };
+      }
+      else{
+        return (
+          <div>
+            <h4 className="text-primary">{comment.username}</h4>
+            <p>{comment.comment}</p>
+            <small className="text-muted">{comment.stationName}</small>
+            <hr />
+          </div>
+        );
+      }
+   }
+  )};
 
 
   const handleCloseModal = () => {
