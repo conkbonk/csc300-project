@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+//CANNOT SEE IF LOGGED OUT
+
+import React, { useState, useEffect } from 'react';
 import {Button, Container, Form} from 'react-bootstrap';
+import getUserInfo from '../../utilities/decodeJwt';
 
 function CommentForm() {
-  const [username, setUsername] = useState('');
   const [stationName, setStationName] = useState('');
   const [comment, setComment] = useState('');
+  const [user, setUser] = useState({})
 
+  useEffect(() => {
+    setUser(getUserInfo())
+  }, [])
+
+  const {username} = user;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -15,13 +23,12 @@ function CommentForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, stationName, comment }),
+        body: JSON.stringify({username, stationName, comment }),
       });
       if (response.ok) {
         // Comment added successfully
         alert('Message sent successfully!');
         // Clear form fields
-        setUsername('');
         setStationName('');
         setComment('');
       } else {
@@ -38,12 +45,6 @@ function CommentForm() {
   <Container>
     <h1>Add Comment</h1>
     <form onSubmit={handleSubmit}>
-      <Form.Group>
-        <Form.Label> Username: </Form.Label>
-        <Form.Control
-          className = 'w-25' type="text" id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
-      </Form.Group>
-    <br />
 
     <Form.Group>
         <Form.Label> Station Name </Form.Label>
