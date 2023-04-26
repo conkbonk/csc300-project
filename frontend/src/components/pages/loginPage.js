@@ -6,7 +6,7 @@ import Form from "react-bootstrap/Form";
 import getUserInfo from "../../utilities/decodeJwt";
 
 const PRIMARY_COLOR = "#cc5c99";
-const SECONDARY_COLOR = '#dfd4dd'
+const SECONDARY_COLOR = '#333333'
 const url = "http://localhost:8096/user/login";
 
 const Login = () => {
@@ -40,8 +40,8 @@ const Login = () => {
     setUser(obj)
 
     if (light) {
-      setBgColor("white");
-      setBgText('Dark mode')
+      setBgColor("LightGrey");
+      setBgText('light')
     } else {
       setBgColor(SECONDARY_COLOR);
       setBgText('Light mode')
