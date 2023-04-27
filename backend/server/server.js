@@ -8,7 +8,6 @@ const getUserByIdRoute = require('./routes/userGetUserById');
 const dbConnection = require('./config/db.config');
 const editUser = require('./routes/userEditUser');
 const deleteUser = require('./routes/userDeleteAll');
-const ratingGetAll = require('./routes/ratingGetAll');
 const getAllCommentsRoute = require('./routes/getAllComments');
 const contactContactMsg = require('./routes/contactContactMsg')
 const commentAddComment = require('./routes/commentCreateComment')
@@ -25,7 +24,6 @@ app.use('/user', getAllUsersRoute);
 app.use('/user', getUserByIdRoute);
 app.use('/user', editUser);
 app.use('/user', deleteUser);
-app.use('/rating', ratingGetAll);
 app.use('/comments',  getAllCommentsRoute);
 app.use('/contact', contactContactMsg);
 app.use('/addComment', commentAddComment);
