@@ -1,52 +1,83 @@
-POST http://localhost:8080/user/signup
+POST http://localhost:8096/user/signup
 Content-Type: application/json 
 
 {
-    "username" : "tochiamanze",
-    "email" : "cdon@gmail.com",
-    "password" : "tochi12345"
+    "username" : "testing",
+    "email" : "mail@gmail.com",
+    "password" : "password"
 }
 
 ###
 
-POST http://localhost:8080/user/login
+POST http://localhost:8096/user/login
 Content-Type: application/json 
 
 {
-    "username" : "tochiamanze",
-    "password" : "tochi12345"
+    "username" : "testing",
+    "password" : "password"
 }
 
 ###
-GET http://localhost:8081/user/getAll
+GET http://localhost:8096/user/getAll
 Content-Type: application/json
 
 ###
 
-POST http://localhost:8081/user/editUser
+POST http://localhost:8096/user/editUser
 Content-Type: application/json 
 
 {
-    "userId" : "635ab8dfc407faf9f73deaf2",
-    "username" : "Tochi Edit",
-    "password" : "dwwrwr"
+    "userId" : "644a7eb8bb2721d71f5f0ede",
+    "username" : "testingEdit",
+    "email": "mailme@mail.com",
+    "password" : "password1"
 }
 
 ###
-GET  http://localhost:8081/user/getUserById
+GET  http://localhost:8096/user/getUserById
 Content-Type: application/json 
 
 {
-    "userId" : "635ab8dfc407faf9f73deaf1"
+    "userId" : "644a7eb8bb2721d71f5f0ede"
 }
-
 ###
-GET  http://localhost:8081/user/getUserById
+POST  http://localhost:8096/user/deleteAll
+Content-Type: application/json 
+{
+
+}
+###
+POST http://localhost:8096/addComment/post
 Content-Type: application/json 
 
 {
-    "userId" : "634edb2a16710b2cda6fb370"
+    "username": "racrann",
+    "stationName": "south",
+    "comment": "i like it!"
+}
+###
+
+POST http://localhost:8096/comments/editComment
+Content-Type: application/json 
+
+{
+    "_id": "644a7d87bb2721d71f5f0ed7",
+    "comment": "changed!"
 }
 
 ###
-POST  http://localhost:8081/user/deleteAll
+GET http://localhost:8096/comments/getAll
+Content-Type: application/json 
+
+###
+POST http://localhost:8096/contact/add
+Content-Type: application/json 
+
+{
+    "name": "john",
+    "email": "mail@mail.com",
+    "message": "this app is awesome!"
+}
+
+
+
