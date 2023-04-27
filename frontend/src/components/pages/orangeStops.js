@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import axios from 'axios';
 
-
 function OrangeStops() {
   const [stops, setAlerts] = useState([]);
 
@@ -17,9 +16,7 @@ function OrangeStops() {
     fetchData();
   }, []);
 
-
   return (
-    
     <div>
       <h1> Orange Line Stops</h1>
       {stops.map(stop => (
@@ -40,6 +37,4 @@ function OrangeStops() {
   );
 }
 
-
 export default OrangeStops;
-
