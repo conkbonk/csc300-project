@@ -12,25 +12,6 @@ function TicketPurchase() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Add code to update user purchase history with the details of the current purchase
-    const purchaseDetails = {
-      ticketBuying,
-      cardType,
-      cardNumber,
-      expiryMonth,
-      expiryYear,
-      cvv,
-      paypalEmail,
-      date: new Date().toLocaleDateString(),
-      time: new Date().toLocaleTimeString(),
-      // Add any other details you want to include in the purchase history
-    };
-
-    // Here's an example of how you could update the user's purchase history using localStorage
-    const purchaseHistory = JSON.parse(localStorage.getItem("purchaseHistory")) || [];
-    const updatedPurchaseHistory = [...purchaseHistory, purchaseDetails];
-    localStorage.setItem("purchaseHistory", JSON.stringify(updatedPurchaseHistory));
-
     // Reset form fields
     setTicketBuying("");
     setCardType("");
