@@ -12,8 +12,10 @@ const getAllCommentsRoute = require('./routes/getAllComments');
 const contactContactMsg = require('./routes/contactContactMsg')
 const commentAddComment = require('./routes/commentCreateComment')
 const commentEditComment = require('./routes/commentEditComment')
-require('dotenv').config();
 const SERVER_PORT = 8096;
+//backend server port
+
+require('dotenv').config();
 
 dbConnection();
 app.use(cors({origin: '*'}));

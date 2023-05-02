@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-//user schema/model
 const commentSchema = new mongoose.Schema(
   {
     username: {

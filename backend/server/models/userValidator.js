@@ -8,7 +8,6 @@ const newUserValidation = data => {
     password: z.string().min(8, 'Password must be 8 or more characters').trim(),
   });
 
-  //>_>
   
   return registerValidationSchema.safeParse(data)
 };

@@ -3,8 +3,6 @@ import axios from 'axios';
 import { Button, Modal, Form } from 'react-bootstrap';
 import getUserInfo from '../../utilities/decodeJwt';
 
-//change to allow logged-out user to see
-
 const CommentList = () => {
   const [user, setUser] = useState({})
   const [comments, setComments] = useState([]);
@@ -31,7 +29,7 @@ const CommentList = () => {
 
   const handleEditComment = async (req, res) => {
     try {
-      if(editedComment.trim().length !== 0)
+      if(editedComment.trim().length !== 0) //checks to make sure that the new comment isnt empty or just white space
       {
       const response = await axios.post('http://localhost:8096/comments/editComment', {
         _id: selectedComment._id,
@@ -55,12 +53,13 @@ const CommentList = () => {
   const handleCommentClick = (comment) => {
     setSelectedComment(comment)
     setEditedComment(comment.comment);
-    if(username == comment.username) {
-      setShowModal(true);
+    if(username == comment.username)//if current user's username matches the comment's username 
+    {
+      setShowModal(true); //show modal
     }
   };
 
-
+  //renders comment blocks, comments made by the user show an edit button
   const renderComments = () => {
     return comments.map((comment) => {
       if(username == comment.username){

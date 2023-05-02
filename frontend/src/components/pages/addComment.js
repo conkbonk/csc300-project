@@ -1,5 +1,3 @@
-//CANNOT SEE IF LOGGED OUT
-
 import React, { useState, useEffect } from 'react';
 import {Button, Container, Form} from 'react-bootstrap';
 import getUserInfo from '../../utilities/decodeJwt';

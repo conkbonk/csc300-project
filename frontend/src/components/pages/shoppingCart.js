@@ -7,57 +7,57 @@ const [purchaseHistory, setPurchaseHistory] = useState([]);
 const [isLoading, setIsLoading] = useState(true);
 
 useEffect(() => {
-setTimeout(() => {
-setIsLoading(false);
-}, 2000);
+  setTimeout(() => {
+    setIsLoading(false);
+  }, 2000);
 }, []);
 
 const handleAddToCart = (product) => {
-const newCartItems = [...cartItems];
-const itemIndex = newCartItems.findIndex((item) => item.id === product.id);
-if (itemIndex > -1) {
-newCartItems[itemIndex].quantity += 1;
-} else {
-newCartItems.push({ ...product, quantity: 1 });
-}
-setCartItems(newCartItems);
+  const newCartItems = [...cartItems];
+  const itemIndex = newCartItems.findIndex((item) => item.id === product.id);
+  if (itemIndex > -1) {
+    newCartItems[itemIndex].quantity += 1;
+  } else {
+    newCartItems.push({ ...product, quantity: 1 });
+  }
+  setCartItems(newCartItems);
 };
 
 const handleRemoveFromCart = (product) => {
-const newCartItems = [...cartItems];
-const itemIndex = newCartItems.findIndex((item) => item.id === product.id);
-if (itemIndex > -1) {
-if (newCartItems[itemIndex].quantity === 1) {
-newCartItems.splice(itemIndex, 1);
-} else {
-newCartItems[itemIndex].quantity -= 1;
-}
-setCartItems(newCartItems);
-}
+  const newCartItems = [...cartItems];
+  const itemIndex = newCartItems.findIndex((item) => item.id === product.id);
+  if (itemIndex > -1) {
+    if (newCartItems[itemIndex].quantity === 1) {
+      newCartItems.splice(itemIndex, 1);
+    } else {
+      newCartItems[itemIndex].quantity -= 1;
+    }
+    setCartItems(newCartItems);
+  }
 };
 
 const getTotalPrice = () => {
-return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 };
 
 const mockConfirmPurchase = () => {
-const newPurchaseHistory = [
-...purchaseHistory,
-{ items: cartItems, totalPrice: getTotalPrice() },
-];
-setPurchaseHistory(newPurchaseHistory);
-alert('Thank you for your purchase!');
-setCartItems([]);
+  const newPurchaseHistory = [
+  ...purchaseHistory,
+  { items: cartItems, totalPrice: getTotalPrice() },
+  ];
+  setPurchaseHistory(newPurchaseHistory);
+  alert('Thank you for your purchase!');
+  setCartItems([]);
 };
 
 if (isLoading) {
-return (
-<div className="d-flex justify-content-center align-items-center vh-100">
-<Spinner animation="border" role="status">
-<span className="sr-only">Loading...</span>
-</Spinner>
-</div>
-);
+  return (
+  <div className="d-flex justify-content-center align-items-center vh-100">
+  <Spinner animation="border" role="status">
+  <span className="sr-only">Loading...</span>
+  </Spinner>
+  </div>
+  );
 }
 return (
   <div className="container-lg">

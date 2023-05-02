@@ -2,9 +2,9 @@ import React from 'react';
 
 const ticketFares = {
 bus: {
-oneWay: 1.75,
-roundTrip: 3.50,
-stops: [
+  oneWay: 1.75,
+  roundTrip: 3.50,
+  stops: [
     { name: 'Alewife', price: 1.75 },
             { name: 'Davis', price: 1.75 },
             { name: 'Porter', price: 1.75 },
@@ -30,9 +30,9 @@ stops: [
 ],
 },
 subway: {
-oneWay: 3.75,
-roundTrip: 7.50,
-stops: [
+  oneWay: 3.75,
+  roundTrip: 7.50,
+  stops: [
     { name: 'Bowdoin', price: 3.75 },
     { name: 'Government Center', price: 3.75 },
     { name: 'State', price: 3.75 },
@@ -48,9 +48,9 @@ stops: [
 ],
 },
 commuterRail: {
-oneWay: 6.25,
-roundTrip: 12.50,
-stops: [
+  oneWay: 6.25,
+  oundTrip: 12.50,
+  stops: [
     { name: 'Forest Hill', price: 6.25 },
     { name: 'Green Street', price: 6.25 },
     { name: 'Stony Brook', price: 6.25 },
@@ -61,9 +61,9 @@ stops: [
 ],
 },
 ferry: {
-oneWay: 4.75,
-roundTrip: 9.50,
-stops: [
+  oneWay: 4.75,
+  roundTrip: 9.50,
+  stops: [
     { name: "Hingham", cost: 4.75 },
     { name: "Hull", cost: 5.50 },
     { name: "Logan Airport Ferry Terminal", cost: 18.00 },

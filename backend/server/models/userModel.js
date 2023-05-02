@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-//user schema/model
 const newUserSchema = new mongoose.Schema(
   {
     username: {
@@ -29,7 +28,6 @@ const newUserSchema = new mongoose.Schema(
     },
   },
   { collection: "users" } 
-  //hey
 );
 
 module.exports = mongoose.model('users', newUserSchema)
